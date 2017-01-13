@@ -76,11 +76,11 @@ Floors and Walls are created as area objects in SAP. The sloped area objects are
 
 ## Plugin
 
-ETABS supports the external plugins. Konstru is developed as plugin and can be reached within ETABS models. The external plug-in has to be added manually Tools &gt; Add/ShowPlugins &gt; Add your plug-in. Please see instructions.
+Konstru is developed as external plugin for ETABS. The external plug-in has to be added manually Tools &gt; Add/ShowPlugins &gt; Add your plug-in. Please see instructions.
 
 ## Custom Profiles
 
-Custom sections in regular shapes \(I,C,W,Rectangular etc\) are supported. Custom profiles can be created via Section Designer while TTX download. The irregular shapes currently are not translate via TTX.
+Custom sections in regular shapes \(I,C,W,Rectangular etc\) are supported. Custom profiles can be created via Section Designer during a model download with the Konstru importer. Irregular shapes currently are not translated by Konstru.
 
 ## Grids
 
@@ -88,7 +88,7 @@ Grids are not supported in ETABS due to OAPI limitations.
 
 ## Levels
 
-TTX Levels are stories in Etabs.
+Konstru Levels are created as stories in Etabs.
 
 ## Analysis Elements
 
@@ -102,23 +102,23 @@ Due to OAPI limitations the area and frame's geometry currently cannot be update
 
 ## Beam, Column and  Braces
 
-Beams, Braces and Columns are created as frame objects in Etabs. Etabs automatically label the frames as B, D and C depends on the orientation. Vertical frames are columns, horizontal ones are beams and the all others are braces. Unique Name can be overwritten only if the TTX name is not duplicated in another frame object.
+Beams, Braces and Columns are created as frame objects in Etabs. Etabs automatically label the frames as B, D and C depends on the orientation. Vertical frames are columns, horizontal ones are beams and the all others are braces. Unique Name can be overwritten only if the Konstru name is not duplicated in another frame object.
 
-* Directions: ETABS automatically flipped the frames \(start and end points\). ETABS flipped the frames per end point coordination. The start point is smaller in respective axis but this only correct when the member the parallel to x, y or z axis! the z axis is the governing axis for example when x and y values are negative values. so the lower z value is the start point. similarly if the z value is the same for both ends, the X axis is the governing axis for y values. so the lower x value is the start point.
+* Directions: ETABS automatically flips the direction of frames \(start and end points\) based on threir end point coordinates: When the member is parallel to the x, y or z axis, ETABS will orien the member suchthat the startpoint has thesmaller X,Y,Z coordinates, and the endpoint has the greater coordinates. The z axis is the governing axis for example when x and y values are negative values. so the lower z value is the start point. similarly if the z value is the same for both ends, the X axis is the governing axis for y values. so the lower x value is the start point.
 
 ## Floor and Walls
 
-Floors and Walls are created as area objects in ETABS. The sloped area objects are currently ignored by TTX but maintained in the model.
+Floors and Walls are created as area objects in ETABS. The sloped area objects are currently ignored by Konstru but maintained in the model.
 
 # Tekla
 
 ## Installation
 
-Due to the nature of how Tekla loads new tools and how we deploy TTX, after the initial install, if nothing appears after hitting the TTX toolbar button, a restart is required. This is necessary only once after the initial install.
+After installing Konstru for Tekla, if nothing appears after hitting the Konstru toolbar button, a restart of Tekla is required. This is necessary only once.
 
 ## Elements
 
-Supported TTX Elements: Beams, Braces, Columns, Floors, Grids, Levels, Walls.
+Supported Konstru Elements: Beams, Braces, Columns, Floors, Grids, Levels, Walls.
 
 ## Openings
 
@@ -128,7 +128,7 @@ Floor openings are supported, but openings created with shafts from Revit are no
 
 ## Elements
 
-Supported TTX Elements: Beams, Braces, Columns, Floors, Grids, Levels, Walls.
+Supported Konstru Elements: Beams, Braces, Columns, Floors, Grids, Levels, Walls.
 
 ## Openings
 
@@ -136,5 +136,5 @@ Floor openings are supported. No other openings are supported.
 
 ## Levels
 
-As RAM is very level driven, it is best to have valid levels present. In cases where valid levels are not present, levels will be automatically created at column endpoints. Framing elements falling within plus or minus 3 feet of a certain level will be created on that level.
+As RAM is very level-driven, it is best to have valid levels present. In cases where valid levels are not present, levels will be automatically created at column endpoints. Framing elements falling within plus or minus 3 feet of a certain level will be created on that level.
 
